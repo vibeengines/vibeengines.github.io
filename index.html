@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -226,14 +225,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
             transition: all 0.4s ease;
+            color: #E50914;
+            font-weight: 700;
         }
 
         .feature-card:hover .feature-icon {
             transform: scale(1.1) rotate(5deg);
             background: linear-gradient(135deg, rgba(229, 9, 20, 0.5), rgba(178, 7, 16, 0.3));
+        }
+
+        .icon-svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
         }
 
         .feature-card h3 {
@@ -430,13 +437,13 @@
     </header>
 
     <section class="hero">
-        <div class="hero-badge">âœ¨ Powered by AI Taste Intelligence</div>
+        <div class="hero-badge">✨ Powered by AI Taste Intelligence</div>
         <h1>
             Recommendations That<br>
             <span class="gradient-text">Match Your Vibe</span>
         </h1>
         <p class="hero-subtitle">
-            Stop settling for generic recommendations. Vibe Engines understands your unique taste across movies, books, music, and moreâ€”delivering personalized picks that actually resonate.
+            Stop settling for generic recommendations. Vibe Engines understands your unique taste across movies, books, music, and more—delivering personalized picks that actually resonate.
         </p>
         <div class="cta-group">
             <button class="cta-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
@@ -450,32 +457,32 @@
         <h2 class="section-title">Why Vibe Engines?</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">ðŸŽ¯</div>
+                <div class="feature-icon">🎯</div>
                 <h3>Taste-First AI</h3>
                 <p>Our AI maps your taste profile across categories, not just what's popular or trending.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">ðŸŒ€</div>
+                <div class="feature-icon">🌀</div>
                 <h3>Cross-Category Magic</h3>
                 <p>Love cozy movies? We'll recommend cozy books and music too. Your vibe travels everywhere.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">âš¡</div>
+                <div class="feature-icon">⚡</div>
                 <h3>Learns Instantly</h3>
                 <p>Every interaction refines your taste profile in real-time. No more waiting for better recommendations.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">ðŸ”®</div>
+                <div class="feature-icon">🔮</div>
                 <h3>Explainable AI</h3>
                 <p>Know exactly why something was recommended. No black box algorithms, just transparent taste matching.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">ðŸŽ¨</div>
+                <div class="feature-icon">🎨</div>
                 <h3>Vibe, Not Genre</h3>
                 <p>Move beyond rigid categories. Discover content based on mood, aesthetic, and feeling.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">ðŸš€</div>
+                <div class="feature-icon">🚀</div>
                 <h3>Zero Cold Start</h3>
                 <p>Get personalized recommendations from day one with our quick taste quiz.</p>
             </div>
@@ -496,14 +503,14 @@
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Get Instant Recommendations</h3>
-                    <p>Receive personalized picks across movies, books, music, and moreâ€”all matching your vibe.</p>
+                    <p>Receive personalized picks across movies, books, music, and more—all matching your vibe.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
                     <h3>Interact & Evolve</h3>
-                    <p>Like, share, or skipâ€”every action helps us understand your taste better and refine future recommendations.</p>
+                    <p>Like, share, or skip—every action helps us understand your taste better and refine future recommendations.</p>
                 </div>
             </div>
             <div class="step">
@@ -524,7 +531,7 @@
             <button type="submit" class="waitlist-submit">Join Waitlist</button>
         </form>
         <p style="margin-top: 1rem; color: rgba(255,255,255,0.5); font-size: 0.9rem;">
-            ðŸ”’ We respect your privacy. No spam, ever.
+            🔒 We respect your privacy. No spam, ever.
         </p>
     </section>
 
@@ -622,7 +629,7 @@
         function handleSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            alert(`Thanks for joining! We'll reach out to ${email} soon! ðŸš€`);
+            alert(`Thanks for joining! We'll reach out to ${email} soon! 🚀`);
             e.target.reset();
         }
 
