@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Engines - Match Your Vibe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.12;
+        }
+
+        .gradient-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            z-index: 1;
+            animation: float-orb 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #E50914, transparent);
+            top: -250px;
+            left: -250px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #ff4757, transparent);
+            bottom: -200px;
+            right: -200px;
+            animation-delay: 5s;
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(-30px, 80px) scale(0.9); }
+            75% { transform: translate(70px, -40px) scale(1.05); }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E50914, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .nav-cta {
+            padding: 0.8rem 2rem;
+            background: rgba(229, 9, 20, 0.15);
+            border: 2px solid rgba(229, 9, 20, 0.5);
+            border-radius: 30px;
+            color: #E50914;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: #E50914;
+            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .nav-cta:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .nav-cta:hover {
+            color: #ffffff;
+            border-color: #E50914;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 10;
+            min-height: 95vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #ff4757;
+            margin-bottom: 2.5rem;
+            animation: pulse-badge 2s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                box-shadow: 0 0 0 rgba(229, 9, 20, 0.4);
+            }
+            50% { 
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
+            }
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.05;
+            letter-spacing: -3px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #E50914 0%, #ff4757 50%, #ff6b7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease infinite;
+            background-size: 200% 200%;
+            display: inline-block;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 3.5rem;
+            max-width: 700px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .cta-primary {
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #E50914, #B20710);
+            border: none;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 35px rgba(229, 9, 20, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(229, 9, 20, 0.6);
+        }
+
+        .cta-secondary {
+            padding: 1.2rem 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Status Section */
+        .status-banner {
+            position: relative;
+            z-index: 10;
+            background: rgba(229, 9, 20, 0.05);
+            border-top: 1px solid rgba(229, 9, 20, 0.15);
+            border-bottom: 1px solid rgba(229, 9, 20, 0.15);
+            padding: 4rem 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .status-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: #ff4757;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(229, 9, 20, 0.2);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+        }
+
+        .status-item.available {
+            background: rgba(229, 9, 20, 0.1);
+            border-color: rgba(229, 9, 20, 0.4);
+        }
+
+        .status-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+        }
+
+        .status-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .status-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-live {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .badge-soon {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.4);
+        }
+
+        /* Features */
+        .features {
+            position: relative;
+            z-index: 10;
+            padding: 7rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.05), rgba(178, 7, 16, 0.02));
+            border: 1px solid rgba(229, 9, 20, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #E50914, #ff4757);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(229, 9, 20, 0.5);
+            box-shadow: 0 25px 60px rgba(229, 9, 20, 0.3);
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.1), rgba(178, 7, 16, 0.05));
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.3), rgba(178, 7, 16, 0.2));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.5s ease;
+            color: #E50914;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.15) rotate(-5deg);
+            background: linear-gradient(135deg, rgba(229, 9, 20, 0.5), rgba(178, 7, 16, 0.3));
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff4757;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            position: relative;
+            z-index: 10;
+            padding: 7rem 2rem;
+            background: rgba(229, 9, 20, 0.02);
+            border-top: 1px solid rgba(229, 9, 20, 0.15);
+        }
+
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideIn 0.8s ease forwards;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(229, 9, 20, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .step:hover {
+            background: rgba(229, 9, 20, 0.05);
+            border-color: rgba(229, 9, 20, 0.3);
+            transform: translateX(10px);
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #E50914, #B20710);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.5);
+        }
+
+        .step-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: #ff4757;
+            font-weight: 700;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Waitlist */
+        .waitlist {
+            position: relative;
+            z-index: 10;
+            padding: 7rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .waitlist-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .waitlist-input {
+            flex: 1;
+            min-width: 280px;
+            padding: 1.3rem 1.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(229, 9, 20, 0.3);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.05rem;
+            outline: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .waitlist-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .waitlist-input:focus {
+            border-color: #E50914;
+            box-shadow: 0 0 30px rgba(229, 9, 20, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .waitlist-submit {
+            padding: 1.3rem 3rem;
+            background: linear-gradient(135deg, #E50914, #B20710);
+            border: none;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+        }
+
+        .waitlist-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(229, 9, 20, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 10;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(229, 9, 20, 0.15);
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #E50914, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-cta {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                min-height: 85vh;
+                padding: 2rem 1rem;
+            }
+
+            .features, .how-it-works, .waitlist {
+                padding: 4rem 1rem;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .step:hover {
+                transform: translateX(0) translateY(-5px);
+            }
+
+            .waitlist-form {
+                flex-direction: column;
+            }
+
+            .waitlist-input {
+                min-width: 100%;
+            }
+
+            .status-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="bg-canvas" id="networkCanvas"></canvas>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+
+    <header>
+        <div class="logo">VIBE ENGINES</div>
+        <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">✨ AI-Powered Vibe Matching Engine</div>
+        <h1>
+            Find What Matches<br>
+            <span class="gradient-text">Your Vibe</span>
+        </h1>
+        <p class="hero-subtitle">
+            Beyond algorithms. Beyond genres. We match content to your unique vibe—discovering movies, sneakers, watches, books, and series that truly resonate with who you are.
+        </p>
+        <div class="cta-group">
+            <button class="cta-primary" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
+                Start Your Journey
+            </button>
+            <a href="#how" class="cta-secondary">See How It Works</a>
+        </div>
+    </section>
+
+    <section class="status-banner">
+        <div class="status-content">
+            <h2 class="status-title">🚀 Currently Available & Coming Soon</h2>
+            <div class="status-grid">
+                <div class="status-item available">
+                    <span class="status-icon">🎬</span>
+                    <div class="status-label">Movies</div>
+                    <span class="status-badge badge-live">● LIVE NOW</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">👟</span>
+                    <div class="status-label">Sneakers</div>
+                    <span class="status-badge badge-soon">⏳ COMING SOON</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">⌚</span>
+                    <div class="status-label">Watches</div>
+                    <span class="status-badge badge-soon">⏳ COMING SOON</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">📺</span>
+                    <div class="status-label">Series</div>
+                    <span class="status-badge badge-soon">⏳ COMING SOON</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">📚</span>
+                    <div class="status-label">Books</div>
+                    <span class="status-badge badge-soon">⏳ COMING SOON</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Vibe Engines?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Vibe-First Matching</h3>
+                <p>We don't just recommend what's popular. We understand your aesthetic, mood, and energy—then find perfect matches across all categories.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌈</div>
+                <h3>Cross-Category Intelligence</h3>
+                <p>Love minimalist design? We'll match you with clean movies, sleek sneakers, and elegant watches. Your vibe connects everything.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Personalization</h3>
+                <p>Get spot-on recommendations from day one. Our AI learns your taste instantly and evolves with every interaction.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Beyond Genres</h3>
+                <p>Forget rigid categories. Discover content based on feelings, aesthetics, energy, and vibes that words can't capture.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔮</div>
+                <h3>Transparent AI</h3>
+                <p>Always know why we recommend something. No mysterious algorithms—just clear, understandable vibe matching.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💫</div>
+                <h3>Expanding Universe</h3>
+                <p>Start with movies, grow with sneakers, watches, books, and series. One profile, unlimited discoveries.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Discover Your Vibe Profile</h3>
+                    <p>Take our quick, intuitive quiz that maps your unique aesthetic across vibes, moods, and styles. It's fun, it's fast, and it's eerily accurate.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Get Instant Matches</h3>
+                    <p>Receive personalized recommendations that actually get you. Start with movies today, and get ready for sneakers, watches, series, and books soon.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Fall in Love with Discovery</h3>
+                    <p>Every like, skip, or save refines your profile. Watch as Vibe Engines becomes your personal curator across everything you love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="waitlist" id="waitlist">
+        <h2 class="section-title">Join the Vibe Revolution</h2>
+        <p class="hero-subtitle">Be the first to experience recommendations that truly understand you. Limited spots available.</p>
+        <form class="waitlist-form" onsubmit="handleSubmit(event)">
+            <input type="email" class="waitlist-input" placeholder="Enter your email" required>
+            <button type="submit" class="waitlist-submit">Reserve Your Spot</button>
+        </form>
+        <p style="margin-top: 2rem; color: rgba(255,255,255,0.5); font-size: 0.95rem;">
+            🔒 Your privacy matters. No spam, ever. Just vibes.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">VIBE ENGINES</div>
+            <p style="color: rgba(255,255,255,0.6); margin-top: 1rem;">Match your vibe. Discover your world.</p>
+            <p class="footer-text">&copy; 2025 Vibe Engines. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Network Animation
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class Node {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 3 + 1;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                
+                this.pulsePhase += 0.02;
+            }
+
+            draw() {
+                const pulse = Math.sin(this.pulsePhase) * 0.5 + 0.5;
+                const currentRadius = this.radius * (0.8 + pulse * 0.4);
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, currentRadius, 0, Math.PI * 2);
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, currentRadius);
+                gradient.addColorStop(0, `rgba(229, 9, 20, ${0.9 * pulse})`);
+                gradient.addColorStop(1, `rgba(178, 7, 16, ${0.3 * pulse})`);
+                ctx.fillStyle = gradient;
+                ctx.fill();
+            }
+        }
+
+        const nodes = [];
+        const nodeCount = window.innerWidth < 768 ? 40 : 70;
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push(new Node(
+                Math.random() * canvas.width,
+                Math.random() * canvas.height
+            ));
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 180) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        const opacity = 0.2 * (1 - dist / 180);
+                        ctx.strokeStyle = `rgba(229, 9, 20, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            drawConnections();
+            
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Form Handling with Animation
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            const button = e.target.querySelector('button');
+            
+            button.textContent = '🎉 Welcome to the Vibe!';
+            button.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            
+            setTimeout(() => {
+                alert(`Awesome! We'll reach out to ${email} soon with exclusive early access! 🚀`);
+                e.target.reset();
+                button.textContent = 'Reserve Your Spot';
+                button.style.background = 'linear-gradient(135deg, #E50914, #B20710)';
+            }, 1000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.gradient-orb');
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 0.3;
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Intersection Observer for feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
