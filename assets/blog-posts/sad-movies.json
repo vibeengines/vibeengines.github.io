@@ -7,6 +7,7 @@
   "items": [
     {
       "number": 1,
+      "trailerUrl": "https://www.youtube.com/embed/DMOBlEcRuw8",
       "emoji": "🎬",
       "title": "The Pursuit of Happyness",
       "year": "2006",
@@ -19,6 +20,7 @@
       "number": 2,
       "emoji": "🎭",
       "title": "Inside Out",
+      "trailerUrl": "https://www.youtube.com/embed/yRUAzGQ3nSY",
       "year": "2015",
       "genre": "Animation",
       "rating": "⭐ 8.1/10",
@@ -29,6 +31,7 @@
       "number": 3,
       "emoji": "🌟",
       "title": "Good Will Hunting",
+      "trailerUrl": "https://www.youtube.com/embed/PaZVjZEFkRs",
       "year": "1997",
       "genre": "Drama",
       "rating": "⭐ 8.3/10",
@@ -40,6 +43,8 @@
       "emoji": "💖",
       "title": "Amélie",
       "year": "2001",
+      "trailerUrl": "https://www.youtube.com/embed/Py7cDXQae2U",
+
       "genre": "Romance/Comedy",
       "rating": "⭐ 8.3/10",
       "description": "This whimsical French film follows shy waitress Amélie as she decides to change the lives of those around her for the better, all while struggling with her own isolation. The vibrant cinematography and charming story are pure magic.",
@@ -50,6 +55,8 @@
       "emoji": "🎸",
       "title": "Soul",
       "year": "2020",
+      "trailerUrl": "https://www.youtube.com/embed/xOsLIiBStEs",
+
       "genre": "Animation",
       "rating": "⭐ 8.0/10",
       "description": "Pixar's profound exploration of life's meaning follows Joe, a jazz musician who gets a second chance at life after an accident. The film beautifully examines what makes life worth living and finding joy in everyday moments.",
@@ -61,6 +68,8 @@
       "title": "The Secret Life of Walter Mitty",
       "year": "2013",
       "genre": "Adventure/Drama",
+      "trailerUrl": "https://www.youtube.com/embed/QD6cy4PBQPI",
+
       "rating": "⭐ 7.3/10",
       "description": "Ben Stiller directs and stars in this visually stunning tale of a daydreamer who embarks on a real-life adventure. Walter's journey from mundane routine to extraordinary experiences is both inspiring and breathtaking.",
       "whyWatch": "It encourages you to break free from your comfort zone and reminds you that life is happening right now. The stunning cinematography provides a much-needed escape."
@@ -71,6 +80,8 @@
       "title": "Little Miss Sunshine",
       "year": "2006",
       "genre": "Comedy/Drama",
+      "trailerUrl": "https://www.youtube.com/embed/wvwVkllXT80",
+
       "rating": "⭐ 7.8/10",
       "description": "A dysfunctional family road trip to a children's beauty pageant becomes a journey of self-discovery and acceptance. This indie gem balances humor and heart perfectly, celebrating imperfection and resilience.",
       "whyWatch": "It shows that being a \"loser\" or \"failure\" by society's standards doesn't define your worth. The family's unconditional support for each other is deeply comforting."
@@ -81,6 +92,8 @@
       "title": "About Time",
       "year": "2013",
       "genre": "Romance/Fantasy",
+      "trailerUrl": "https://www.youtube.com/embed/7OIFdWk83no",
+
       "rating": "⭐ 7.8/10",
       "description": "Tim discovers he can travel through time and uses this ability to improve his life and find love. But he learns that the secret to happiness isn't changing the past—it's appreciating every ordinary moment.",
       "whyWatch": "It's a beautiful meditation on living in the present and cherishing life's simple pleasures. You'll laugh, cry, and feel grateful for what you have."
@@ -91,6 +104,8 @@
       "title": "Rocky",
       "year": "1976",
       "genre": "Sports/Drama",
+      "trailerUrl": "https://www.youtube.com/embed/-Hk-LYcavrw",
+
       "rating": "⭐ 8.1/10",
       "description": "The underdog story that defined a genre. Small-time boxer Rocky Balboa gets a shot at the heavyweight championship and trains with everything he's got. It's not about winning—it's about going the distance.",
       "whyWatch": "Few films are as motivating. Rocky's determination and heart remind you that even when the odds are stacked against you, showing up and trying your best is a victory in itself."
@@ -99,6 +114,8 @@
       "number": 10,
       "emoji": "🦋",
       "title": "A Beautiful Day in the Neighborhood",
+      "trailerUrl": "https://www.youtube.com/embed/-VLEPhfEN2M",
+
       "year": "2019",
       "genre": "Drama",
       "rating": "⭐ 7.3/10",
