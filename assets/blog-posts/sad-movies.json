@@ -1,0 +1,109 @@
+
+{
+  "id": "sad-movies",
+  "title": "Top 10 Movies to Watch When You're Sad",
+  "subtitle": "Cinematic comfort food for the soul",
+  "intro": "We all have those days when the world feels a bit heavy. Sometimes, the best medicine is curling up with a great movie that either lifts your spirits or helps you embrace your emotions. Here's our carefully curated list of films that provide comfort, hope, and maybe even a good cry when you need it most.",
+  "items": [
+    {
+      "number": 1,
+      "emoji": "🎬",
+      "title": "The Pursuit of Happyness",
+      "year": "2006",
+      "genre": "Drama",
+      "rating": "⭐ 8.0/10",
+      "description": "Will Smith delivers a powerful performance as Chris Gardner, a struggling salesman who becomes homeless with his young son. This inspiring true story reminds us that no matter how tough life gets, perseverance and hope can lead to extraordinary outcomes.",
+      "whyWatch": "It's a beautiful reminder that your current struggles don't define your future. The father-son bond will warm your heart and remind you what truly matters."
+    },
+    {
+      "number": 2,
+      "emoji": "🎭",
+      "title": "Inside Out",
+      "year": "2015",
+      "genre": "Animation",
+      "rating": "⭐ 8.1/10",
+      "description": "Pixar's masterpiece takes us inside the mind of 11-year-old Riley, where her emotions are personified. This brilliant film teaches us that it's okay to feel sad and that all emotions serve an important purpose in our lives.",
+      "whyWatch": "It validates your sadness and helps you understand that feeling down is a natural, necessary part of being human. Plus, it's impossible not to smile at the colorful characters."
+    },
+    {
+      "number": 3,
+      "emoji": "🌟",
+      "title": "Good Will Hunting",
+      "year": "1997",
+      "genre": "Drama",
+      "rating": "⭐ 8.3/10",
+      "description": "Matt Damon plays Will, a troubled genius working as a janitor at MIT. With the help of therapist Sean Maguire (Robin Williams), Will learns to confront his past and embrace vulnerability. The film explores themes of love, loss, and self-worth.",
+      "whyWatch": "Robin Williams' compassionate performance reminds us that healing is possible and that \"it's not your fault.\" The emotional breakthroughs feel cathartic."
+    },
+    {
+      "number": 4,
+      "emoji": "💖",
+      "title": "Amélie",
+      "year": "2001",
+      "genre": "Romance/Comedy",
+      "rating": "⭐ 8.3/10",
+      "description": "This whimsical French film follows shy waitress Amélie as she decides to change the lives of those around her for the better, all while struggling with her own isolation. The vibrant cinematography and charming story are pure magic.",
+      "whyWatch": "Its quirky optimism is infectious, reminding you that small acts of kindness can create ripples of joy. The visual beauty alone is enough to lift your spirits."
+    },
+    {
+      "number": 5,
+      "emoji": "🎸",
+      "title": "Soul",
+      "year": "2020",
+      "genre": "Animation",
+      "rating": "⭐ 8.0/10",
+      "description": "Pixar's profound exploration of life's meaning follows Joe, a jazz musician who gets a second chance at life after an accident. The film beautifully examines what makes life worth living and finding joy in everyday moments.",
+      "whyWatch": "It gently reminds you that life's purpose isn't just one big thing, but the collection of small, beautiful moments. The jazz soundtrack is soul-soothing."
+    },
+    {
+      "number": 6,
+      "emoji": "🌈",
+      "title": "The Secret Life of Walter Mitty",
+      "year": "2013",
+      "genre": "Adventure/Drama",
+      "rating": "⭐ 7.3/10",
+      "description": "Ben Stiller directs and stars in this visually stunning tale of a daydreamer who embarks on a real-life adventure. Walter's journey from mundane routine to extraordinary experiences is both inspiring and breathtaking.",
+      "whyWatch": "It encourages you to break free from your comfort zone and reminds you that life is happening right now. The stunning cinematography provides a much-needed escape."
+    },
+    {
+      "number": 7,
+      "emoji": "🎨",
+      "title": "Little Miss Sunshine",
+      "year": "2006",
+      "genre": "Comedy/Drama",
+      "rating": "⭐ 7.8/10",
+      "description": "A dysfunctional family road trip to a children's beauty pageant becomes a journey of self-discovery and acceptance. This indie gem balances humor and heart perfectly, celebrating imperfection and resilience.",
+      "whyWatch": "It shows that being a \"loser\" or \"failure\" by society's standards doesn't define your worth. The family's unconditional support for each other is deeply comforting."
+    },
+    {
+      "number": 8,
+      "emoji": "🌙",
+      "title": "About Time",
+      "year": "2013",
+      "genre": "Romance/Fantasy",
+      "rating": "⭐ 7.8/10",
+      "description": "Tim discovers he can travel through time and uses this ability to improve his life and find love. But he learns that the secret to happiness isn't changing the past—it's appreciating every ordinary moment.",
+      "whyWatch": "It's a beautiful meditation on living in the present and cherishing life's simple pleasures. You'll laugh, cry, and feel grateful for what you have."
+    },
+    {
+      "number": 9,
+      "emoji": "⚡",
+      "title": "Rocky",
+      "year": "1976",
+      "genre": "Sports/Drama",
+      "rating": "⭐ 8.1/10",
+      "description": "The underdog story that defined a genre. Small-time boxer Rocky Balboa gets a shot at the heavyweight championship and trains with everything he's got. It's not about winning—it's about going the distance.",
+      "whyWatch": "Few films are as motivating. Rocky's determination and heart remind you that even when the odds are stacked against you, showing up and trying your best is a victory in itself."
+    },
+    {
+      "number": 10,
+      "emoji": "🦋",
+      "title": "A Beautiful Day in the Neighborhood",
+      "year": "2019",
+      "genre": "Drama",
+      "rating": "⭐ 7.3/10",
+      "description": "Tom Hanks embodies Fred Rogers in this tender story about a cynical journalist whose perspective on life changes after meeting the beloved TV host. It's a film about kindness, forgiveness, and emotional healing.",
+      "whyWatch": "Mr. Rogers' gentle wisdom and radical kindness feel like a warm hug. The film reminds us that it's okay to feel our feelings and that we all deserve compassion—including from ourselves."
+    }
+  ]
+}
