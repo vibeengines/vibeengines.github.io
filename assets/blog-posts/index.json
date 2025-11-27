@@ -1,0 +1,10 @@
+[
+  {
+    "id": "sad-movies",
+    "path": "sad-movies.json"
+  },
+  {
+    "id": "interstellar",
+    "path": "interstellar.json"
+  }
+]
