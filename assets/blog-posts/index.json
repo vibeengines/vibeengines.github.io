@@ -6,5 +6,9 @@
   {
     "id": "interstellar",
     "path": "interstellar.json"
+  },
+  {
+    "id": "christmas-movies",
+    "path": "christmas-movies.json"
   }
 ]
