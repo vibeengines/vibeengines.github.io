@@ -1,0 +1,118 @@
+{
+"id": "christmas-movies",
+"title": "Movies to Watch This Christmas",
+"subtitle": "Cozy, Heartwarming, and Unexpected Holiday Picks for Every Kind of Festive Vibe",
+"intro": "Need the perfect movie for a snowed-in night, a family gathering, or a quiet cup of cocoa by the lights? This Christmas collection has you covered — from classic, tear-jerking heartwarmers to modern comedies and a few delightfully unexpected picks. Pick a vibe, press play, and let the holiday mood settle in.",
+"items": [
+{
+"number": 1,
+"trailerUrl": "https://www.youtube.com/embed/iLR3gZrU2Xo",
+"emoji": "✨",
+"title": "It's a Wonderful Life",
+"year": "1946",
+"genre": "Drama/Fantasy",
+"rating": "⭐ 8.6/10",
+"description": "Frank Capra's perennial classic follows George Bailey, a small-town man on the brink of despair, who gets shown what life would have been like without him by an angel named Clarence. It's a deeply emotional meditation on purpose, community, and gratitude.",
+"whyWatch": "The ultimate 'feel-everything' Christmas movie — ideal for families, reflective nights, or when you need a reminder of why small acts matter."
+},
+{
+"number": 2,
+"trailerUrl": "https://www.youtube.com/embed/jEDaVHmw7r4",
+"emoji": "🏠",
+"title": "Home Alone",
+"year": "1990",
+"genre": "Comedy/Family",
+"rating": "⭐ 7.6/10",
+"description": "When 8-year-old Kevin McCallister is accidentally left behind while his family jets off for Christmas, he must defend his home from two bumbling burglars using creative booby traps and sheer childlike cunning.",
+"whyWatch": "Perfect for a light-hearted family night; it mixes slapstick, warmth, and that special chaotic holiday energy everyone remembers."
+},
+{
+"number": 3,
+"trailerUrl": "https://www.youtube.com/embed/a54yC1etmVc",
+"emoji": "🎄",
+"title": "Elf",
+"year": "2003",
+"genre": "Comedy/Fantasy",
+"rating": "⭐ 7.1/10",
+"description": "Will Ferrell stars as Buddy, a human raised at the North Pole who travels to New York City in search of his biological father. Childlike wonder collides with cynical urban life in a film packed with laughs and big-hearted moments.",
+"whyWatch": "A modern Christmas staple — irresistible if you want pure joy, goofy comedy, and a reminder to embrace delight like a child."
+},
+{
+"number": 4,
+"trailerUrl": "https://www.youtube.com/embed/H9Z3_ifFheQ",
+"emoji": "❤️",
+"title": "Love Actually",
+"year": "2003",
+"genre": "Romantic Comedy/Anthology",
+"rating": "⭐ 7.6/10",
+"description": "Multiple interwoven stories about love in its many forms unfold in the weeks leading up to Christmas in London. The ensemble cast navigates heartbreak, obsession, friendship, and the messy beauty of human connection.",
+"whyWatch": "Great for couple's night or as a sentimental group watch — it’s romantic, occasionally messy, and ultimately uplifting in that holiday way."
+},
+{
+"number": 5,
+"trailerUrl": "https://www.youtube.com/embed/f0oyHtZiJJs",
+"emoji": "🎁",
+"title": "The Polar Express",
+"year": "2004",
+"genre": "Animation/Family",
+"rating": "⭐ 6.6/10",
+"description": "A magical train ride transports a doubting boy to the North Pole on Christmas Eve, where he encounters wondrous sights and a test of his belief. The film uses motion-capture animation to create a dreamlike holiday journey.",
+"whyWatch": "Ideal for nostalgic cozy nights and viewers who love wonder, visual spectacle, and a story that celebrates believing."
+},
+{
+"number": 6,
+"trailerUrl": "https://www.youtube.com/embed/Bx8FX7etF_8",
+"emoji": "🧑‍🎄",
+"title": "The Santa Clause",
+"year": "1994",
+"genre": "Comedy/Family",
+"rating": "⭐ 6.5/10",
+"description": "After an accidental mishap, Scott Calvin (Tim Allen) becomes the new Santa Claus and must navigate the absurdities and responsibilities of the North Pole while his son adjusts to the magical upheaval.",
+"whyWatch": "A charming, funny take on the Santa mythos — great for kids and adults who enjoy a sweet, comedic holiday fantasy."
+},
+{
+"number": 7,
+"trailerUrl": "https://www.youtube.com/embed/taE3PwurhYM",
+"emoji": "🎶",
+"title": "Klaus",
+"year": "2019",
+"genre": "Animation/Family",
+"rating": "⭐ 8.2/10",
+"description": "This beautifully animated origin story reimagines Santa Claus through the lens of an unlikely friendship between a postman and a reclusive toymaker. It blends hand-drawn aesthetics with a fresh, heartwarming narrative.",
+"whyWatch": "Modern classic potential — visually stunning with a sincere message about kindness and village-wide transformation."
+},
+{
+"number": 8,
+"trailerUrl": "https://www.youtube.com/embed/cfjEZ88NHBw",
+"emoji": "🧾",
+"title": "A Christmas Story",
+"year": "1983",
+"genre": "Comedy/Family",
+"rating": "⭐ 8.0/10",
+"description": "Set in 1940s America, young Ralphie Parker dreams of getting a Red Ryder BB gun for Christmas and navigates family rituals, school bullies, and holiday eccentricities.",
+"whyWatch": "Warm, nostalgic, and endlessly quotable — perfect for anyone who loves childhood-tinged holiday humor and tradition."
+},
+{
+"number": 9,
+"trailerUrl": "https://www.youtube.com/embed/pNo-Q0IDJi0",
+"emoji": "🎭",
+"title": "The Muppet Christmas Carol",
+"year": "1992",
+"genre": "Musical/Family",
+"rating": "⭐ 7.7/10",
+"description": "The Muppets bring a joyful, musical retelling of Charles Dickens' classic, with Michael Caine as Ebenezer Scrooge. It's both faithful and delightfully silly, with memorable songs and puppet charm.",
+"whyWatch": "A fantastic cross-generational watch — adults appreciate the Dickens heart, kids love the puppets and songs."
+},
+{
+"number": 10,
+"trailerUrl": "https://www.youtube.com/embed/jaJuwKCmJbY",
+"emoji": "🔫",
+"title": "Die Hard",
+"year": "1988",
+"genre": "Action/Thriller",
+"rating": "⭐ 8.2/10",
+"description": "Bruce Willis stars as NYPD officer John McClane, who must save hostages (including his estranged wife) from terrorists in a high-rise office building on Christmas Eve. Fast-paced, witty, and packed with tension.",
+"whyWatch": "For those who want a non-traditional Christmas movie — high-energy, exciting, and the perfect counterpoint to more saccharine holiday fare. Many fans argue it's an unconventional Christmas classic."
+}
+]
+}
